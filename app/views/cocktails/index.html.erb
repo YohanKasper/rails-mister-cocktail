@@ -1,4 +1,12 @@
-<div class="container">
+ <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn-media.rtl.fr/cache/vdA4JQl54C8_0l1SJ00nwA/2000v1333-0/online/image/2020/0507/7800489939_les-visiteurs-2-les-couloirs-du-temps-est-sorti-en-1998.png);">
+      <div class="container">
+        <h1><span id="banner-typed-text"></span></h1>
+        <p>Vous savez ce qu'il vous reste à faire.</p>
+        <%= link_to "Offrez lui un brevage", new_cocktail_path, class: "btn btn-primary m-2"%>
+      </div>
+  </div>
+
+<div class="container mt-3">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-sm-12 col-md-6 col-lg-4">
@@ -17,4 +25,3 @@
     <% end %>
   </div>
 </div>
-

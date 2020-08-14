@@ -2,20 +2,24 @@
 
   <h2 class="mt-4"> <%= @cocktail.name %> </h2>
 
+  <div class="img-show"
+       style="background-image: url('<%= cl_image_path(@cocktail.photo.key, height: 300, width: 300, crop: :fill) %>');" >
+  </div>
+
   <div>
     <% if @cocktail.doses.empty? %>
-    <p class="text-gray">
-      Pas d'ingrédient pour le moment, ajoutes en un !
-    </p>
+    <p>Pas d'ingrédient pour le moment, ajoutes en un !</p>
     <% else %>
-    <h3> Ingrédients </h2>
+    <h3 class="mt-2"> Ingrédients </h2>
       <% end %>
+      <br>
   </div>
+      <br>
 
   <ul class="list-unstyled">
     <% @cocktail.doses.each do |dose| %>
     <li>
-      <i class="fa fa-glass"></i> <strong> <%= dose.ingredient.name %> </strong>
+      <i class="fa fa-glass"></i><%= dose.ingredient.name %>
       <%= link_to dose_path(dose), method: :delete do %>
       <i class="fa fa-trash" aria-hidden="true"></i>
       <% end %>
@@ -36,5 +40,4 @@
         </div>
       </div>
     </div>
-
 </div>
